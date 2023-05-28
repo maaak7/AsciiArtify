@@ -1,45 +1,45 @@
-# Порівняльний аналіз інструментів для розгортання Kubernetes кластерів в локальному середовищі
+# Comparative Analysis of Tools for Deploying Kubernetes Clusters in a Local Environment
 
-## Вступ
+## Introduction
 
-У цьому документі ми проведемо порівняльний аналіз трьох інструментів для розгортання Kubernetes кластерів в локальному середовищі: minikube, kind та k3d. Описані інструменти допоможуть визначити найбільш підходящий варіант для PoC стартапу "AsciiArtify".
+In this document, we will conduct a comparative analysis of three tools for deploying Kubernetes clusters in a local environment: minikube, kind, and k3d. These described tools will help determine the most suitable option for the "AsciiArtify" startup's Proof of Concept (PoC).
 
-## Характеристики
+## Characteristics
 
-### Minikube | [Документація](https://minikube.sigs.k8s.io/docs/)
+### Minikube | [Documentation](https://minikube.sigs.k8s.io/docs/)
 
-Minikube - це локальна система Kubernetes, яка дозволяє розгортати кластер Kubernetes на одному комп'ютері. Основні характеристики Minikube включають:
+Minikube is a local Kubernetes system that allows you to deploy a Kubernetes cluster on a single computer. The key features of Minikube include:
 
-- Підтримувані ОС та архітектури: Minikube підтримує багато платформ, включаючи Windows, macOS та Linux.
-- Автоматизація: Minikube надає командний інтерфейс (CLI), який дозволяє автоматизувати процеси розгортання та управління кластером.
-- Додаткові функції: Minikube надає деякі додаткові функції, такі як можливість локального розроблення та тестування контейнерів.
+- Supported Operating Systems and Architectures: Minikube supports multiple platforms, including Windows, macOS, and Linux.
+- Automation: Minikube provides a Command-Line Interface (CLI) that allows automating deployment and cluster management processes.
+- Additional Features: Minikube offers additional features such as the ability to develop and test containers locally.
 
-### Kind (Kubernetes IN Docker) | [Документація](https://kind.sigs.k8s.io/docs/)
+### Kind (Kubernetes IN Docker) | [Documentation](https://kind.sigs.k8s.io/docs/)
 
-Kind - це інструмент, який дозволяє створювати локальні Kubernetes кластери в Docker контейнерах. Основні характеристики Kind включають:
+Kind is a tool that enables the creation of local Kubernetes clusters in Docker containers. The key features of Kind include:
 
-- Підтримувані ОС та архітектури: Kind підтримує багато платформ, включаючи Windows, macOS та Linux, оскільки використовує Docker для створення кластерів.
-- Автоматизація: Kind надає можливість автоматизувати створення та управління локальними Kubernetes кластерами за допомогою CLI.
-- Додаткові функції: Kind спрощує розгортання та тестування кластерів, а також надає можливість налаштовувати різні варіанти конфігурації кластеру.
+- Supported Operating Systems and Architectures: Kind supports various platforms, including Windows, macOS, and Linux since it utilizes Docker for cluster creation.
+- Automation: Kind provides the capability to automate the creation and management of local Kubernetes clusters through its CLI.
+- Additional Features: Kind simplifies the deployment and testing of clusters and allows customization of different cluster configuration options.
 
-### K3d | [Документація](https://k3d.io/)
+### K3d | [Documentation](https://k3d.io/)
 
-K3d - це інструмент для створення локальних Kubernetes кластерів в Docker контейнерах з використанням Rancher Kubernetes Engine (RKE). Основні характеристики K3d включають:
+K3d is a tool for creating local Kubernetes clusters in Docker containers using Rancher Kubernetes Engine (RKE). The key features of K3d include:
 
-- Підтримувані ОС та архітектури: K3d підтримує багато платформ, включаючи Windows, macOS та Linux, оскільки використовує Docker для створення кластерів.
-- Автоматизація: K3d надає зручний CLI для автоматизації створення та управління локальними Kubernetes кластерами.
-- Додаткові функції: K3d надає додаткові можливості, такі як моніторинг та керування кластерами Kubernetes.
-</br>
+- Supported Operating Systems and Architectures: K3d supports multiple platforms, including Windows, macOS, and Linux, as it utilizes Docker for cluster creation.
+- Automation: K3d offers a convenient CLI for automating the creation and management of local Kubernetes clusters.
+- Additional Features: K3d provides additional capabilities such as monitoring and management of Kubernetes clusters.
+<br>
 
-## Переваги і недоліки
+## Pros and Cons
 
-| Інструмент      | Переваги | Недоліки |
-|-----------------|----------|----------|
-| <b>Minikube</b> |- Зручний для розробки та тестування на локальному комп'ютері.</br>- Легкий у використанні та налаштуванні.</br>- Підтримка широкого спектру ОС та архітектур.|- Обмежені можливості масштабування.|
-| <b>Kind</b>     |- Легкий у використанні та конфігурації.</br>- Можливість налаштовувати різні варіанти конфігурації кластеру.</br>- Швидкість розгортання кластера.|- Можуть виникнути проблеми з ресурсами системи, оскільки використовує Docker контейнери.|
-| <b>K3d</b>      |- Швидке створення та тестування кластерів.</br>- Можливість моніторингу та керування кластерами Kubernetes.</br>- Зручний CLI для автоматизації операцій.|- Потребує встановлення RKE для підтримки більш складних сценаріїв.|
-</br>
+| Tool            | Advantages                                                                                                                                                            | Disadvantages                                                        |
+|-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------|
+| <b>Minikube</b> | - Convenient for development and testing on a local computer.</br>- Easy to use and configure.</br>- Support for a wide range of operating systems and architectures. | Limited scalability options.                                         |
+| <b>Kind</b>     | - Easy to use and configure.</br>- Ability to customize different cluster configuration options.</br>- Fast cluster deployment.                                       | Potential resource issues as it uses Docker containers.              |
+| <b>K3d</b>      | - Rapid creation and testing of clusters.</br>- Ability to monitor and manage Kubernetes clusters.</br>- Convenient CLI for automating operations.                    | Requires the installation of RKE to support more complex scenarios.  |
+<br>
 
-## Демо
+## Demo
 
 [![asciicast](https://asciinema.org/a/585862.svg)](https://asciinema.org/a/585862)
